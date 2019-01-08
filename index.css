@@ -4,13 +4,52 @@
 
 .header{
     width: 100%;
-    height: 50px;
-    z-index: 9999;
-    background: dimgray;
+    height: 300px;
 }
 
-.col{
+.bar{
     width: 100%;
+    height: 50px;
+    top: 0px;
+    float: left;
+    position: absolute;
+}
+
+.bar-blur{
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 0px;
+    filter: blur(4px);
+    background-image: url('./picture/background.jpg');
+    background-size: 100%,100%;
+}
+
+.bar-maks{
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 0px;
+    background-color: rgba(255, 255, 255, 0.3);
+    box-shadow: 2px;
+}
+
+.header.bar{
+    z-index: 999;
+}
+
+.bg{
+    background-image: url('./picture/background.jpg');
+    text-align: center;
+    height: 300px;
+    background-repeat: no-repeat;
+    background-size: 100%,100%;
+}
+
+.bg-blur{
+    width: 100%;
+    filter: blur(15px);
+    -webkit-filter: blur(15px);
 }
 
 .logo{
