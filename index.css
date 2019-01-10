@@ -1,3 +1,7 @@
+html{
+    background-color: gray;
+}
+
 body{
     margin: 0%;
 }
@@ -58,6 +62,17 @@ body{
     width: 100%;
     filter: blur(15px);
     -webkit-filter: blur(15px);
+}
+
+#minPic{
+    margin: 60px 20px 10px 20px;
+    width: 80px;
+    height: 80px;
+    float: left;
+    border-radius: 15%;
+}
+#minPic:hover{
+    box-shadow: 0 0 8px #DDD;
 }
 
 .logo{
