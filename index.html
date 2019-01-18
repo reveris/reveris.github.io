@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="zh-Hans">
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<title>MyWebPage</title>
+	<link rel="icon" href="./Picture/mainPic.png">
+	<link rel="stylesheet" href="CSS/index.css">
+	<link rel="stylesheet" href="./CSS/font-awesome.min.css">
+	<script src="https://ajax.aspnetcdn.com/ajax/jquery/jquery-1.9.0.min.js"></script>
+	<script src="JS/jquery.easing.1.3.js" type="text/javascript"></script>
+	<script src="JS/index.js" type="text/javascript" charset="utf-8" async defer></script>
+	<script type="text/javascript">
+		$(document).ready(function(){
+			$('#page-index').css('visibility','visible');
+			$('#page-anime').css('visibility','hidden');
+			$('#page-resume').css('visibility','hidden');
+		});
+	</script>
+</head>
+<body>
+	<div class="page" id="page-index">
+		<div>
+			<div id="wapper"></div>
+			<div class="BG" id="index-BG"></div>
+		</div>
+		<div class="headPic">
+			<div id="portMask"></div>
+			<div id="portiart"></div>
+		</div>
+		<div style="height: 40px;width: 100%"></div>
+		<div class="BtBar">
+			<div class="dis-inline border-bt bt-font" id="center_bt" onclick="indexOnclick()">了解更多</div>
+		</div>
+		<div style="position: fixed;top: 0;left: 0;">
+			<div class="border-bt" id="audio-bt" onclick="bgMusic()">
+				<i class="fa fa-pause" style="font-size: 20px;margin-top: 5px;margin-left: 6px;"></i>
+			</div>
+			<audio id="bgMusic" loop="loop" autoplay="autoplay">
+				<source src="./audio/PLANETES.mp3" type="audio/mp3">
+			</audio>
+		</div>
+	</div>
+	<div class="page" id="page-anime" style="background-color: #000">
+		<div class="BG" id="anime-BG"></div>
+		<div class="dis-inline border-bt bt-font" id="center_bt" onclick="animeOnclick()">回到主页</div>
+		<div class="dis-inline border-bt bt-font" id="animeToresume-bt" onclick="animeToresumeOnclick()">resume</div>
+	</div>
+	<div class="page" id="page-resume">
+		<div class="BG" id="resume-BG"></div>
+		<div class="dis-inline border-bt bt-font" id="resumeTohome-bt" onclick="resumeTohomeOnclick()">回到主页</div>
+	</div>
+	<div class="sideBar">
+		
+	</div>
+	<div class="ChangeBG bottom" id="ChangeBG">
+
+	</div>
+</body>
+</html>
