@@ -50,12 +50,12 @@ function indexOnclick() {
 
 function animeOnclick() {
 	changePage(0);
-	PageChangeAudio(false);
+	// PageChangeAudio(false);
 }
 
 function animeToresumeOnclick() {
 	changePage(2);
-	PageChangeAudio(false);
+	// PageChangeAudio(false);
 }
 
 function resumeTohomeOnclick() {
