@@ -63,7 +63,7 @@ body{
 	width: 150px;
 	height: 150px;
 	border-radius: 30px;
-	background-image: url("../Picture/mainPic.jpg");
+	background-image: url("../Picture/mainPic.png");
 	background-repeat: no-repeat;
 	background-size: contain;
 }
@@ -189,5 +189,61 @@ body{
 
 /***********************************************************************/
 .sideBar{
-
+	position: fixed;
+	right: -150px;
+	top: 50%;
+	height: 400px;
+	width: 150px;
+	transform: translate(0,-50%);
+}
+#arror{
+	position: absolute;
+	width: 25px;
+	height: 80px;
+	top: 50%;
+	margin-left: -25px;
+	border-top-left-radius: 10px;
+	border-bottom-left-radius: 10px;
+	transform: translate(0,-50%);
+	background-color: rgba(0,0,0,0.8);
+	border-width: 2px 0 2px 2px;
+	border-style: solid;
+	border-color: #FFFFFFC8;
+}
+.acenter{
+	position: absolute;
+	font-size: 35px;
+	font-weight: bolder;
+	top: 50%;
+	left: 50%;
+	color: #D8D8D8FF;
+	transform: translate(-50%,-50%);
+}
+#content{
+	position: absolute;
+	width: 150px;
+	height: 400px;
+	left: 0px;
+	border-width: 2px 0 2px 2px;
+	border-style: solid;
+	border-color: #FFFFFFC8;
+	background-color: rgba(0,0,0,0.8);
+}
+.indexBt{
+	margin: 5px 0 5px 0;
+	height: 40px;
+	width: 100%;
+	line-height: 40px;
+	text-align: center;
+	cursor: pointer;
+	color: #8C8C8CFF;
+	font-size: 20px;
+	font-weight: bolder;
+	letter-spacing: 3px;
+}
+.indexBt:hover{
+/*	background-color: #aaa;*/
+	font-size: 25px;
+	color: #FFFFFFFF;
+	/*text-shadow:0 0 35px #FBF303;*/
 }

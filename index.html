@@ -4,7 +4,7 @@
 	<meta charset="utf-8">
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
 	<title>MyWebPage</title>
-	<link rel="icon" href="./Picture/mainPic.jpg">
+	<link rel="icon" href="./Picture/mainPic.png">
 	<link rel="stylesheet" href="CSS/index.css">
 	<link rel="stylesheet" href="./CSS/font-awesome.min.css">
 	<script src="https://ajax.aspnetcdn.com/ajax/jquery/jquery-1.9.0.min.js"></script>
@@ -15,6 +15,7 @@
 			$('#page-index').css('visibility','visible');
 			$('#page-anime').css('visibility','hidden');
 			$('#page-resume').css('visibility','hidden');
+			// $('#sideBar').css('visibility','hidden');
 		});
 	</script>
 </head>
@@ -34,7 +35,7 @@
 		</div>
 		<div style="position: fixed;top: 0;left: 0;">
 			<div class="border-bt" id="audio-bt" onclick="bgMusic()">
-				<i class="fa fa-pause" style="font-size: 20px;margin-top: 5px;margin-left: 6px;"></i>
+				<i class="fa fa-pause" id="audio" style="font-size: 20px;margin-top: 5px;margin-left: 6px;"></i>
 			</div>
 			<audio id="bgMusic" loop="loop" autoplay="autoplay">
 				<source src="./audio/PLANETES.mp3" type="audio/mp3">
@@ -50,8 +51,19 @@
 		<div class="BG" id="resume-BG"></div>
 		<div class="dis-inline border-bt bt-font" id="resumeTohome-bt" onclick="resumeTohomeOnclick()">回到主页</div>
 	</div>
-	<div class="sideBar">
+	<div class="page" id="page-noth">
 		
+	</div>
+	<div class="sideBar" id="sideBar" onmouseover="mouseHover()" onmouseout="mouseOut()">
+		<div class="dis-inline" id="arror">
+			<i class="fa fa-chevron-left acenter"></i>
+		</div>
+		<div class="dis-inline" id="content">
+			<div class="indexBt" onclick="ToIndex()">首页</div>
+			<div class="indexBt" onclick="ToAnime()">anime</div>
+			<div class="indexBt" onclick="ToResume()">简历</div>
+			<div class="indexBt" onclick="ToNoth()">待定</div>
+		</div>
 	</div>
 	<div class="ChangeBG bottom" id="ChangeBG">
 

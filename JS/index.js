@@ -2,7 +2,7 @@
 var audio = $('#bgMusic')[0];
 var isaudioChange = false;
 
-var pageDict = ['index','anime','resume'];
+var pageDict = ['index','anime','resume','noth'];
 var currentPage = 0;
 
 function changePage(pagenum) {
@@ -14,12 +14,29 @@ function changePage(pagenum) {
 	{
 		changeAnimeDOWN(pagenum);
 	}
+	if(pagenum == 0)
+	{
+		if(isaudioChange)
+		{
+			bgMusic();
+			isaudioChange = false;
+		}
+	}
+	else
+	{
+		if(!audio.paused)
+		{
+			bgMusic();
+			isaudioChange = true;
+		}
+	}
 }
 
 function changeAnimeUP(pagenum) {
 	$('#ChangeBG').removeClass('top').addClass('bottom').animate({height:'100%'},1000,'easeInOutCubic',function(){
 		$('#page-'+pageDict[currentPage]).css("visibility","hidden");
 		$('#page-'+pageDict[pagenum]).css("visibility","visible");
+		$('#sideBar').css('visibility','visible');
 		$('title').text(pageDict[pagenum]+'Page');
 		$('#ChangeBG').removeClass('bottom').addClass('top');
 		currentPage = pagenum;
@@ -33,6 +50,7 @@ function changeAnimeDOWN(pagenum) {
 	$('#ChangeBG').removeClass('bottom').addClass('top').animate({height:'100%'},1000,'easeInOutCubic',function(){
 		$('#page-'+pageDict[currentPage]).css("visibility","hidden");
 		$('#page-'+pageDict[pagenum]).css("visibility","visible");
+		if(pagenum == 0){$('#sideBar').css('visibility','hidden');}
 		$('title').text(pageDict[pagenum]+'Page');
 		$('#ChangeBG').removeClass('top').addClass('bottom');
 		currentPage = pagenum;
@@ -42,58 +60,77 @@ function changeAnimeDOWN(pagenum) {
 	});
 }
 
+function ToIndex() {
+	changePage(0);
+}
+function ToAnime() {
+	changePage(1);
+}
+function ToResume() {
+	changePage(2);
+}
+function ToNoth() {
+	changePage(3);
+}
 
 function indexOnclick() {
 	changePage(1);
-	PageChangeAudio(true);
 }
 
 function animeOnclick() {
 	changePage(0);
-	// PageChangeAudio(false);
 }
 
 function animeToresumeOnclick() {
 	changePage(2);
-	// PageChangeAudio(false);
 }
 
 function resumeTohomeOnclick() {
 	changePage(0);
-	PageChangeAudio(false);
 }
 
 function bgMusic() {
 	if(audio.paused)
 	{
 		audio.play();
-		$('i.fa').removeClass('fa-play').addClass('fa-pause').css('margin-left','6px');
+		$('#audio').removeClass('fa-play').addClass('fa-pause').css('margin-left','6px');
 	}
 	else
 	{
 		audio.pause();
-		$('i.fa').removeClass('fa-pause').addClass('fa-play').css('margin-left','8px');
+		$('#audio').removeClass('fa-pause').addClass('fa-play').css('margin-left','8px');
 	}
 }
 
-function PageChangeAudio(ChangeType) {
-	if(ChangeType)
-	{
-		if(audio.paused)
+var timer = null;
+var element = document.getElementById('sideBar');
+
+function mouseHover() {
+	sideBarAnime(150);
+}
+function mouseOut() {
+	sideBarAnime(0);
+}
+function sideBarAnime(end) {
+	clearInterval(timer);
+	timer =setInterval(function () {
+		var speed = 0;
+		if((window.innerWidth-element.offsetLeft) < end)
 		{
+			speed = 5;
 		}
 		else
 		{
-			bgMusic();
-			isaudioChange = true;
+			speed = -5;
 		}
-	}
-	else
-	{
-		if(isaudioChange)
+		if((window.innerWidth-element.offsetLeft) == end)
 		{
-			bgMusic();
-			isaudioChange = false;
+			clearInterval(timer);
 		}
-	}
+		else
+		{
+			element.style.right = window.innerWidth-element.offsetLeft- 150 + speed + 'px';
+		}
+	},10);
 }
+
