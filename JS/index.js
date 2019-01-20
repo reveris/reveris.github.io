@@ -2,7 +2,7 @@
 var audio = $('#bgMusic')[0];
 var isaudioChange = false;
 
-var pageDict = ['index','anime','resume','noth'];
+// var pageDict = ['index','anime','resume','noth'];
 var currentPage = 0;
 
 function changePage(pagenum) {
@@ -106,30 +106,30 @@ var timer = null;
 var element = document.getElementById('sideBar');
 
 function mouseHover() {
-	sideBarAnime(150);
+	sideBarAnime(150,5);
 }
 function mouseOut() {
-	sideBarAnime(0);
+	sideBarAnime(0,-5);
 }
-function sideBarAnime(end) {
+function sideBarAnime(end,speed) {
 	clearInterval(timer);
 	timer =setInterval(function () {
-		var speed = 0;
-		if((window.innerWidth-element.offsetLeft) < end)
+		element.style.right = window.innerWidth-element.offsetLeft- 150 + speed + 'px';
+		if(speed > 0)
 		{
-			speed = 5;
+			if((window.innerWidth-element.offsetLeft) >= end)
+			{
+				clearInterval(timer);
+				element.style.right = '0px';
+			}
 		}
 		else
 		{
-			speed = -5;
-		}
-		if((window.innerWidth-element.offsetLeft) == end)
-		{
-			clearInterval(timer);
-		}
-		else
-		{
-			element.style.right = window.innerWidth-element.offsetLeft- 150 + speed + 'px';
+			if((window.innerWidth-element.offsetLeft) <= end)
+			{
+				clearInterval(timer);
+				element.style.right = '-150px';
+			}
 		}
 	},10);
 }
