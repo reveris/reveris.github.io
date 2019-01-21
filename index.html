@@ -10,7 +10,7 @@
 
 	<link rel="stylesheet" href="live2d/css/live2d.css">
 
-	<script src="https://ajax.aspnetcdn.com/ajax/jquery/jquery-1.9.0.min.js"></script>
+	<!-- <script src="https://ajax.aspnetcdn.com/ajax/jquery/jquery-1.9.0.min.js"></script>
 	<script src="JS/jquery.easing.1.3.js" type="text/javascript" defer></script>
 	<script src="JS/index.js" type="text/javascript" charset="utf-8" async defer></script>
 	<script type="text/javascript">
@@ -22,7 +22,7 @@
 				$('#page-'+pageDict[i]).css('visibility','hidden');
 			}
 		});
-	</script>
+	</script> -->
 
 </head>
 <body>
@@ -80,6 +80,20 @@
 
 	</div>
 <!------------------- Live2D相关代码 ---------------------->
+	<script src="https://ajax.aspnetcdn.com/ajax/jquery/jquery-1.9.0.min.js"></script>
+	<script src="JS/jquery.easing.1.3.js" type="text/javascript" defer></script>
+	<script src="JS/index.js" type="text/javascript" charset="utf-8" async defer></script>
+	<script type="text/javascript">
+		var pageDict = ['index','anime','resume','noth'];
+		$(document).ready(function(){
+			$('#page-'+pageDict[0]).css('visibility','visible');
+			for (var i=1;i<pageDict.length;i++)
+			{
+				$('#page-'+pageDict[i]).css('visibility','hidden');
+			}
+		});
+	</script>
+
 	<script type="text/javascript">
 		var message_Path = 'live2d/';
 		var talkAPI = '';
