@@ -446,8 +446,8 @@ if(!norunFlag){
 	}
 	$(document).ready(function() {
 		var AIimgSrc = [
-			home_Path + message_Path + "model/Kobayaxi/Kobayaxi.2048/texture_00.png"
-		]
+			home_Path + message_Path + "model/xxb/model.2048/texture_00.png"
+		];
 		var images = [];
 		var imgLength = AIimgSrc.length;
 		var loadingNum = 0;
@@ -468,7 +468,7 @@ if(!norunFlag){
 						},1300);
 					}
 					setTimeout(function(){
-						loadlive2d("live2d", message_Path+"model/Kobayaxi/Kobayaxi.model.json");
+						loadlive2d("live2d", message_Path+"model/xxb/model.json");
 					},1000);
 					initLive2d ();
 					images = null;
