@@ -1,8 +1,4 @@
 
-var audio = $('#bgMusic')[0];
-var isaudioChange = false;
-
-// var pageDict = ['index','anime','resume','noth'];
 var currentPage = 0;
 
 function changePage(pagenum) {
@@ -13,22 +9,6 @@ function changePage(pagenum) {
 	else if(pagenum < currentPage)
 	{
 		changeAnimeDOWN(pagenum);
-	}
-	if(pagenum == 0)
-	{
-		if(isaudioChange)
-		{
-			bgMusic();
-			isaudioChange = false;
-		}
-	}
-	else
-	{
-		if(!audio.paused)
-		{
-			bgMusic();
-			isaudioChange = true;
-		}
 	}
 }
 
@@ -89,46 +69,53 @@ function resumeTohomeOnclick() {
 	changePage(0);
 }
 
-function bgMusic() {
-	if(audio.paused)
-	{
-		audio.play();
-		$('#audio').removeClass('fa-play').addClass('fa-pause').css('margin-left','6px');
-	}
-	else
-	{
-		audio.pause();
-		$('#audio').removeClass('fa-pause').addClass('fa-play').css('margin-left','8px');
-	}
-}
-
 var timer = null;
 var element = document.getElementById('sideBar');
+var musicBar = document.getElementById('musicBar');
 
 function mouseHover() {
-	sideBarAnime(150,5);
+	sideBarAnime(element,150,5,'right');
 }
 function mouseOut() {
-	sideBarAnime(0,-5);
+	sideBarAnime(element,0,-5,'right');
 }
-function sideBarAnime(end,speed) {
+function musicBarHover() {
+	sideBarAnime(musicBar,0,5,'left');
+}
+function musicBarOut() {
+	sideBarAnime(musicBar,-100,-5,'left');
+}
+function sideBarAnime(element,end,speed,direction) {
 	clearInterval(timer);
 	timer =setInterval(function () {
-		element.style.right = window.innerWidth-element.offsetLeft- 150 + speed + 'px';
-		if(speed > 0)
-		{
-			if((window.innerWidth-element.offsetLeft) >= end)
-			{
-				clearInterval(timer);
-				element.style.right = '0px';
+		if(direction == 'right'){
+			element.style.right = window.innerWidth-element.offsetLeft- 150 + speed + 'px';
+			if(speed > 0){
+				if((window.innerWidth-element.offsetLeft) >= end){
+					clearInterval(timer);
+					element.style.right = end - 150 + 'px';
+				}
+			}
+			else{
+				if((window.innerWidth-element.offsetLeft) <= end){
+					clearInterval(timer);
+					element.style.right = end - 150 + 'px';
+				}
 			}
 		}
-		else
-		{
-			if((window.innerWidth-element.offsetLeft) <= end)
-			{
-				clearInterval(timer);
-				element.style.right = '-150px';
+		if(direction == 'left'){
+			element.style.left = element.offsetLeft + speed + 'px';
+			if(speed > 0){
+				if(element.offsetLeft >= end){
+					clearInterval(timer);
+					element.style.left = end + 'px';
+				}
+			}
+			else{
+				if(element.offsetLeft <= end){
+					clearInterval(timer);
+					element.style.right = end + 'px';
+				}
 			}
 		}
 	},10);
