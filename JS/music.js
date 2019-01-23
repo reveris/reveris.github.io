@@ -36,7 +36,9 @@ function pause() {
 }
 
 setInterval(function(){
-	if(audio.currentTime == audio.duration){GetMusic();}
+	if(audio.currentTime == audio.duration){
+		songNum += 1;
+		GetMusic();}
 },500);
 
 function GetPlaylist() {
