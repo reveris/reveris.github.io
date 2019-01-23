@@ -74,16 +74,16 @@ var element = document.getElementById('sideBar');
 var musicBar = document.getElementById('musicBar');
 
 function mouseHover() {
-	sideBarAnime(element,150,5,'right');
+	sideBarAnime(element,150,10,'right');
 }
 function mouseOut() {
-	sideBarAnime(element,0,-5,'right');
+	sideBarAnime(element,0,-10,'right');
 }
 function musicBarHover() {
-	sideBarAnime(musicBar,0,5,'left');
+	sideBarAnime(musicBar,0,10,'left');
 }
 function musicBarOut() {
-	sideBarAnime(musicBar,-100,-5,'left');
+	sideBarAnime(musicBar,-100,-10,'left');
 }
 function sideBarAnime(element,end,speed,direction) {
 	clearInterval(timer);
