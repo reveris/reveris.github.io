@@ -77,7 +77,7 @@
             "text": ["这里是菜单"]
         },
         {
-            "selector": "c-player a.play-icon",
+            "selector": "#musicBar",
             "text": ["想要听点音乐吗"]
         },
         {
