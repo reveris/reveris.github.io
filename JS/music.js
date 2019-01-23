@@ -35,6 +35,10 @@ function pause() {
 	$('#musicControl').removeClass('fa-pause').addClass('fa-play').css('margin-left','1px');
 }
 
+setInterval(function(){
+	if(audio.currentTime == audio.duration){GetMusic();}
+},500);
+
 function GetPlaylist() {
 	$.ajax({
 		url: 'https://api.imjad.cn/cloudmusic/?type=playlist&id='+playlistID,
