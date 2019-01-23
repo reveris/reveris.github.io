@@ -2,7 +2,7 @@
     position: fixed;
     bottom: 0px;
     left: 10px;
-    z-index: 10;
+    z-index: 1;
     font-size: 0;
     transition: all .3s ease-in-out;
     -webkit-transform: translateY(3px);
