@@ -9,7 +9,13 @@
         "center_x":0.0,
         "center_y":-0.05,
         "width":2.0
-    },
+	},
+	"hit_areas_custom":{
+		"head_x":[-0.6,0.6],
+		"head_y":[-0.37,0.46],
+		"body_x":[-0.57,0.45],
+		"body_y":[-0.4,0.17]
+	},
 	"motions":{
 		"idle":[
 			{"file":"motions/Idle.mtn"}
