@@ -2,18 +2,34 @@ var audio = $('#bgMusic')[0];
 var playlistID = 2200232865;
 var songIDlist;
 var songNum = 0;
+var isOrder = false;
 function MusicInit() {
 	GetPlaylist();
 }
-
+function GetNum(param){
+	if(isOrder){
+		if(param == 'down'){
+			songNum += 1;
+			if (songNum == songIDlist.length) {songNum = 0;}
+		}else if(param == 'up'){
+			songNum -= 1;
+			if (songNum < 0) {songNum = songIDlist.length-1;}
+		}
+	}else{
+		var num;
+		while(true){
+			num = Math.floor(Math.random()*songIDlist.length);
+			if(num != songNum){break;}
+		}
+		songNum = num;
+	}
+}
 function lastMusic() {
-	songNum -= 1;
-	if (songNum < 0) {songNum = songIDlist.length-1;}
+	GetNum('up')
 	GetMusic();
 }
 function nextMusic() {
-	songNum += 1;
-	if (songNum == songIDlist.length) {songNum = 0;}
+	GetNum('down')
 	GetMusic();
 }
 function controlMusic() {
@@ -26,6 +42,15 @@ function controlMusic() {
 		pause();
 	}
 }
+function order(){
+	if(isOrder){
+		$('#musicOrder').removeClass('fa-retweet').addClass('fa-random');
+	}
+	else{
+		$('#musicOrder').removeClass('fa-random').addClass('fa-retweet');
+	}
+	isOrder = !isOrder; 
+}
 function play() {
 	audio.play();
 	$('#musicControl').removeClass('fa-play').addClass('fa-pause').css('margin-left','');
@@ -37,9 +62,9 @@ function pause() {
 
 setInterval(function(){
 	if(audio.currentTime == audio.duration){
-		songNum += 1;
+		GetNum('down');
 		GetMusic();}
-},500);
+},300);
 
 function GetPlaylist() {
 	$.ajax({

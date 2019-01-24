@@ -65,7 +65,13 @@
 			</audio>
 			<div class="dis-inline" id="musicBarcontent">
 				<div class="musicPic">
-					<div style="width: 100%; height: 70px;"></div>
+					<div style="width: 100%; height: 70px;">
+						<div style="position:absolute;left:5px;top:5px;">
+							<div class="musicBtBG" style="width: 20px;height:20px;" onclick="order()">
+								<i class="fa fa-random center" id="musicOrder" style="color:#fff;font-size: 12px;"></i>
+							</div>
+						</div>
+					</div>
 					<div style="width: 100%; height: 30px;position: absolute;">
 						<div class="dis-inline" id="lastMusic">
 							<div class="musicBtBG" style="width: 20px;height:20px;" onclick="lastMusic()">
