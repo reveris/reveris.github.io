@@ -53,8 +53,10 @@ function order(){
 	isOrder = !isOrder; 
 }
 function play() {
-	audio.play();
-	$('#musicControl').removeClass('fa-play').addClass('fa-pause').css('margin-left','');
+	audio.addEventListenter('canplaythrough',function(){
+		audio.play();
+		$('#musicControl').removeClass('fa-play').addClass('fa-pause').css('margin-left','');
+	})
 }
 function pause() {
 	audio.pause();
