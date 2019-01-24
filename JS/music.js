@@ -53,10 +53,10 @@ function order(){
 	isOrder = !isOrder; 
 }
 function play() {
-	audio.addEventListenter('canplaythrough',function(){
+	audio.addEventListener('canplaythrough',function(){
 		audio.play();
 		$('#musicControl').removeClass('fa-play').addClass('fa-pause').css('margin-left','');
-	})
+	});
 }
 function pause() {
 	audio.pause();
