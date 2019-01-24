@@ -20,7 +20,7 @@
 		"flick_head":[
 			{"file":"motions/Anone_Synced.mtn"}
 		],
-		"tap_body":[
+		"tap_face":[
 			{"file":"motions/Dance.mtn"}
 		]
 	}
