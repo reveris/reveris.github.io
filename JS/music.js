@@ -5,6 +5,7 @@ var songNum = 0;
 var isOrder = false;
 function MusicInit() {
 	GetPlaylist();
+	$('audio').attr('autoplay','autoplay');
 }
 function GetNum(param){
 	if(isOrder){
