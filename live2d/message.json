@@ -1,84 +1,36 @@
 {
     "mouseover": [
         {
-            "selector": ".container a[href^='http']",
-            "text": ["要看看 <span style=\"color:#0099cc;\">{text}</span> 么？"]
+            "selector": ".fa-random",
+            "text": ["现在是随机播放，要切换模式吗？"]
         },
         {
-            "selector": ".fui-home",
-            "text": ["点击前往首页，想回到上一页可以使用浏览器的后退功能哦"]
+            "selector": ".fa-step-backward",
+            "text": ["要切换到上一曲吗？"]
         },
         {
-            "selector": "#tor_show",
-            "text": ["翻页比较麻烦吗，点击可以显示这篇文章的目录呢"]
+            "selector": ".fa-step-forward",
+            "text": ["要切换到下一曲吗？"]
         },
         {
-            "selector": "#comment_go,.fui-chat",
-            "text": ["想要去评论些什么吗？"]
+            "selector": ".fa-pause",
+            "text": ["要暂停吗？"]
         },
         {
-            "selector": "#night_mode",
-            "text": ["深夜时要爱护眼睛呀"]
+            "selector": ".fa-play",
+            "text": ["要开始播放吗？"]
         },
         {
-            "selector": "#qrcode",
-            "text": ["手机扫一下就能继续看，很方便呢"]
+            "selector": "#musicName",
+            "text": ["name"]
         },
         {
-            "selector": ".comment_reply",
-            "text": ["要吐槽些什么呢"]
+            "selector": "#musicBarlabel",
+            "text": ["要来点音乐吗？"]
         },
         {
-            "selector": "#back-to-top",
-            "text": ["回到开始的地方吧"]
-        },
-        {
-            "selector": "#author",
-            "text": ["该怎么称呼你呢"]
-        },
-        {
-            "selector": "#mail",
-            "text": ["留下你的邮箱，不然就是无头像人士了"]
-        },
-        {
-            "selector": "#url",
-            "text": ["你的家在哪里呢，好让我去参观参观"]
-        },
-        {
-            "selector": "#textarea",
-            "text": ["认真填写哦，垃圾评论是禁止事项"]
-        },
-        {
-            "selector": ".OwO-logo",
-            "text": ["要插入一个表情吗"]
-        },
-        {
-            "selector": "#csubmit",
-            "text": ["要提交了吗，首次评论需要审核，请耐心等待~"]
-        },
-        {
-            "selector": ".ImageBox",
-            "text": ["点击图片可以放大呢"]
-        },
-        {
-            "selector": "input[name=s]",
-            "text": ["找不到想看的内容？搜索看看吧"]
-        },
-        {
-            "selector": ".previous",
-            "text": ["去上一页看看吧"]
-        },
-        {
-            "selector": ".next",
-            "text": ["去下一页看看吧"]
-        },
-        {
-            "selector": ".dropdown-toggle",
-            "text": ["这里是菜单"]
-        },
-        {
-            "selector": "#musicBar",
-            "text": ["想要听点音乐吗"]
+            "selector": "#homePage",
+            "text": ["要去首页看看吗？"]
         },
         {
             "selector": "c-player div.time",

@@ -43,6 +43,7 @@ $.ajax({
             $(document).on("mouseover", tips.selector, function (){
                 var text = tips.text;
                 if(Array.isArray(tips.text)) text = tips.text[Math.floor(Math.random() * tips.text.length + 1)-1];
+                if(text == 'name'){text ='告诉你一个秘密，歌曲的名字是<br><b>' + songName + '</b>哦';}
                 text = text.render({text: $(this).text()});
                 showMessage(text, 3000);
             });
@@ -95,17 +96,17 @@ $.ajax({
                 text = '嗨~ 快来逗我玩吧！';
             }
         }else {
-            text = '欢迎阅读<span style="color:#0099cc;">『' + document.title.split(' - ')[0] + '』</span>';
+            text = '欢迎阅读<span style="color:#ff8000;">『' + document.title.split(' - ')[0] + '』</span>';
         }
     }
     showMessage(text, 6000);
 })();
 
-window.setInterval(showHitokoto,30000);
+//window.setInterval(showHitokoto,10000);
 
 function showHitokoto(){
-    $.getJSON('https://api.imjad.cn/hitokoto/?cat=&charset=utf-8&length=28&encode=json',function(result){
-        showMessage(result.hitokoto, 5000);
+    $.getJSON('https://api.imjad.cn/hitokoto/?cat=e&charset=utf-8&length=35&encode=json',function(result){
+        showMessage(result.hitokoto, 3000);
     });
 }
 
@@ -114,11 +115,11 @@ function showMessage(text, timeout){
     console.log(text);
     $('.message').stop();
     $('.message').html(text).fadeTo(200, 1);
-    if (timeout === null) timeout = 5000;
+    if (timeout === null) timeout = 3000;
     hideMessage(timeout);
 }
 function hideMessage(timeout){
     $('.message').stop().css('opacity',1);
-    if (timeout === null) timeout = 5000;
+    if (timeout === null) timeout = 3000;
     $('.message').delay(timeout).fadeTo(200, 0);
 }

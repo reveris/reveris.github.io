@@ -2,6 +2,7 @@ var audio = $('#bgMusic')[0];
 var playlistID = 2200232865;
 var songIDlist;
 var songNum = 0;
+var songName;
 var isOrder = false;
 function MusicInit() {
 	GetPlaylist();
@@ -53,10 +54,8 @@ function order(){
 	isOrder = !isOrder; 
 }
 function play() {
-	audio.addEventListener('canplaythrough',function(){
-		audio.play();
-		$('#musicControl').removeClass('fa-play').addClass('fa-pause').css('margin-left','');
-	});
+	audio.play();
+	$('#musicControl').removeClass('fa-play').addClass('fa-pause').css('margin-left','');
 }
 function pause() {
 	audio.pause();
@@ -75,20 +74,20 @@ function GetPlaylist() {
 		dataType:'json',
 		Method: 'Get',
 		success: function(response){
-			res = response;
 			songIDlist = response.playlist.trackIds;
-			piclist = response.playlist.tracks;
 			GetMusic();
 		}
 	});
 }
 
 function GetMusic() {
+	$('.musicBtBG').css('visibility','hidden');
 	$.ajax({
 		url: 'https://api.imjad.cn/cloudmusic/?type=detail&id='+songIDlist[songNum].id,
 		dataType:'json',
 		Method: 'Get',
 		success: function(response){
+			songName = response.songs[0].name;
 			var picurl = response.songs[0].al.picUrl;
 			$('.musicPic').css({'background':'url('+picurl+'?param=100y100)',
 								'background-repeat':'no-repeat',
@@ -105,5 +104,8 @@ function GetMusic() {
 			$('audio').attr('src',murl);
 		}
 	});
-	play();
+	audio.oncanplay = function(){
+		$('.musicBtBG').css('visibility','visible');
+		play();
+	};
 }

@@ -192,8 +192,8 @@ body{
 .sideBar{
 	position: fixed;
 	right: -150px;
-	top: 50%;
-	height: 400px;
+	top: 40%;
+	height: 250px;
 	width: 150px;
 	transform: translate(0,-50%);
 }
@@ -201,7 +201,7 @@ body{
 	position: absolute;
 	width: 25px;
 	height: 80px;
-	top: 20%;
+	top: 40%;
 	margin-left: -25px;
 	border-top-left-radius: 10px;
 	border-bottom-left-radius: 10px;
@@ -223,7 +223,7 @@ body{
 #content{
 	position: absolute;
 	width: 150px;
-	height: 400px;
+	height: 100%;
 	left: 0px;
 	border-width: 2px 0 2px 2px;
 	border-style: solid;
@@ -298,6 +298,7 @@ body{
 	border-radius:50%;
 	background-color:#000;
 	opacity: 0.5;
+	cursor: pointer;
 }
 .musicBtBG:hover{
 	opacity: 0.8;

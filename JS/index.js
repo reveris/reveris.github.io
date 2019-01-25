@@ -1,5 +1,6 @@
 
 var currentPage = 0;
+var ismusicBarOpen = false;
 
 function changePage(pagenum) {
 	if(pagenum > currentPage)
@@ -30,7 +31,7 @@ function changeAnimeDOWN(pagenum) {
 	$('#ChangeBG').removeClass('bottom').addClass('top').animate({height:'100%'},1000,'easeInOutCubic',function(){
 		$('#page-'+pageDict[currentPage]).css("visibility","hidden");
 		$('#page-'+pageDict[pagenum]).css("visibility","visible");
-		if(pagenum == 0){$('#sideBar').css('visibility','hidden');}
+		//if(pagenum == 0){$('#sideBar').css('visibility','hidden');}
 		$('title').text(pageDict[pagenum]+'Page');
 		$('#ChangeBG').removeClass('top').addClass('bottom');
 		currentPage = pagenum;
@@ -39,34 +40,8 @@ function changeAnimeDOWN(pagenum) {
 		$('#ChangeBG').removeClass('bottom').addClass('top');
 	});
 }
-
-function ToIndex() {
-	changePage(0);
-}
-function ToAnime() {
-	changePage(1);
-}
-function ToResume() {
-	changePage(2);
-}
-function ToNoth() {
-	changePage(3);
-}
-
-function indexOnclick() {
-	changePage(1);
-}
-
-function animeOnclick() {
-	changePage(0);
-}
-
-function animeToresumeOnclick() {
-	changePage(2);
-}
-
-function resumeTohomeOnclick() {
-	changePage(0);
+function ToPage(num){
+	changePage(num);
 }
 
 var timer = null;
@@ -79,12 +54,22 @@ function mouseHover() {
 function mouseOut() {
 	sideBarAnime(element,0,-10,'right');
 }
-function musicBarHover() {
-	sideBarAnime(musicBar,0,10,'left');
+function musicBarCtrl(){
+	if(ismusicBarOpen){
+		sideBarAnime(musicBar,-100,-10,'left');
+		$('#musicCenter').css('color','#E8E8E8FF')
+	}else{
+		sideBarAnime(musicBar,0,10,'left');
+		$('#musicCenter').css('color','#ff9866');
+	}
+	ismusicBarOpen = !ismusicBarOpen;
 }
-function musicBarOut() {
-	sideBarAnime(musicBar,-100,-10,'left');
-}
+// function musicBarHover() {
+// 	sideBarAnime(musicBar,0,10,'left');
+// }
+// function musicBarOut() {
+// 	sideBarAnime(musicBar,-100,-10,'left');
+// }
 function sideBarAnime(element,end,speed,direction) {
 	clearInterval(timer);
 	timer =setInterval(function () {
