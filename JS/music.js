@@ -1,5 +1,6 @@
 var audio = $('#bgMusic')[0];
 var playlistID = 2200232865;
+var albumID = 55949;//空之境界1
 var songIDlist;
 var songNum = 0;
 var songName;

@@ -41,7 +41,12 @@ function changeAnimeDOWN(pagenum) {
 	});
 }
 function ToPage(num){
+	var x = $('div#content').children();
+	x[currentPage].style.color = '';
+	x[currentPage].style.fontSize = '';
 	changePage(num);
+	x[num].style.color = '#FFF';
+	x[num].style.fontSize = '25px';
 }
 
 var timer = null;
