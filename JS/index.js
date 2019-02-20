@@ -17,7 +17,7 @@ function changeAnimeUP(pagenum) {
 	$('#ChangeBG').removeClass('top').addClass('bottom').animate({height:'100%'},1000,'easeInOutCubic',function(){
 		$('#page-'+pageDict[currentPage]).css("visibility","hidden");
 		$('#page-'+pageDict[pagenum]).css("visibility","visible");
-		$('#sideBar').css('visibility','visible');
+		//$('#sideBar').css('visibility','visible');
 		$('title').text(pageDict[pagenum]+'Page');
 		$('#ChangeBG').removeClass('bottom').addClass('top');
 		currentPage = pagenum;
