@@ -5,6 +5,7 @@ var songIDlist;
 var songNum = 0;
 var songName;
 var isOrder = false;
+var lycMode = false;
 
 function MusicInit() {
     GetPlaylist();
@@ -119,4 +120,15 @@ function GetMusic() {
         $('.musicBtBG').css('visibility', 'visible');
         play();
     };
+}
+
+function lycmode() {
+    if (lycMode) {
+        $('#musicLyric').removeClass('show');
+        $('.lyr').css('color', 'rgb(214,214,214)');
+    } else {
+        $('#musicLyric').addClass('show');
+        $('.lyr').css('color', 'rgb(211,55,55)');
+    }
+    lycMode = !lycMode;
 }

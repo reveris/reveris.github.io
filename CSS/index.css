@@ -1,331 +1,415 @@
-body{
-	padding: 0;
-	margin: 0;
-	min-width: 500px;
-	min-height: 400px
+body {
+    padding: 0;
+    margin: 0;
+    min-width: 500px;
+    min-height: 400px
 }
 
-.page{
-	position: fixed;
-	top: 0;
-	left: 0;
-	bottom: 0;
-	right: 0;
+.page {
+    position: fixed;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
 }
 
-#page-index{
-	visibility: visible;
+#page-index {
+    visibility: visible;
 }
 
-.BG{
-	position: fixed;
-	top: 0;
-	left: 0;
-	height: 100%;
-	width: 100%;
-	min-width: 800px;
-	z-index: -10;
-	zoom: 1;
-	background-repeat: no-repeat;
-	background-size: cover;
-	background-position: center center;
+.BG {
+    position: fixed;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 100%;
+    min-width: 800px;
+    z-index: -10;
+    zoom: 1;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center center;
 }
+
 
 /***********************主页面*****************************/
-#wapper{
-	position: fixed;
-	top: 0;
-	left: 0;
-	bottom: 0;
-	right: 0;
-	background-color: rgba(0,0,0,0.65);
+
+#wapper {
+    position: fixed;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
+    background-color: rgba(0, 0, 0, 0.65);
 }
 
-#index-BG{
-	background-image: url("../Picture/mainBG.jpg");
+#index-BG {
+    background-image: url("../Picture/mainBG.jpg");
 }
 
-.headPic{
-	width: 150px;
-	height: 150px;
-	margin-top: 15%;
-	margin-left: 50%;
-	position: relative;
-
-	transform: translate(-50%,0%);
+.headPic {
+    width: 150px;
+    height: 150px;
+    margin-top: 15%;
+    margin-left: 50%;
+    position: relative;
+    transform: translate(-50%, 0%);
 }
 
-#portiart{
-	position: absolute;
-	top: 0;
-	left: 0;
-	z-index: 2;
-	width: 150px;
-	height: 150px;
-	border-radius: 30px;
-	background-image: url("../Picture/mainPic.png");
-	background-repeat: no-repeat;
-	background-size: contain;
+#portiart {
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: 2;
+    width: 150px;
+    height: 150px;
+    border-radius: 30px;
+    background-image: url("../Picture/mainPic.png");
+    background-repeat: no-repeat;
+    background-size: contain;
 }
 
-#portMask{
-	position: absolute;
-	top: 0;
-	left: 0;
-	z-index: 3;
-	width: 150px;
-	height: 150px;
-	border-radius: 30px;
-	background-color: rgba(0,0,0,0.5);
+#portMask {
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: 3;
+    width: 150px;
+    height: 150px;
+    border-radius: 30px;
+    background-color: rgba(0, 0, 0, 0.5);
 }
 
-.BtBar{
-	position: relative;
-	width: 80%;
-	height: 80px;
-	margin-left: auto;
-	margin-right: auto;
+.BtBar {
+    position: relative;
+    width: 80%;
+    height: 80px;
+    margin-left: auto;
+    margin-right: auto;
 }
 
-.dis-inline{
-	display: inline;
+.dis-inline {
+    display: inline;
 }
 
-#audio-bt{
-	width: 30px;
-	height: 30px;
-	margin: 10px;
-	padding: 5px;
-
+#audio-bt {
+    width: 30px;
+    height: 30px;
+    margin: 10px;
+    padding: 5px;
 }
+
+
 /***********************************************************************/
+
 
 /********************************按钮***********************************/
-.border-bt{
-	width: auto;
-	border-width: 3px;
-	border-color: rgba(255,255,255,0.25);
-	border-style: solid;
-	color: rgba(255,255,255,0.3);
-	padding: 10px 30px 10px 30px;
-	border-radius: 5px;
-	cursor: pointer;
+
+.border-bt {
+    width: auto;
+    border-width: 3px;
+    border-color: rgba(255, 255, 255, 0.25);
+    border-style: solid;
+    color: rgba(255, 255, 255, 0.3);
+    padding: 10px 30px 10px 30px;
+    border-radius: 5px;
+    cursor: pointer;
+    user-select: none;
 }
 
-.bt-font{
-	font-size: 20px;
-	font-family: fantasy;
-	font-weight: bold;
-	letter-spacing: 5px;
-}
-.border-bt:hover{
-	border-color: rgba(255,255,255,0.5);
-	color: rgba(255,255,255,0.6);
-	box-shadow: 0 0 3px rgba(255,255,255,365);
-}
-#center_bt{
-	position: absolute;
-	left: 50%;
-	top: 50%;
-	transform: translate(-50%,-50%);
-	text-decoration: none;
+.bt-font {
+    font-size: 20px;
+    font-family: fantasy;
+    font-weight: bold;
+    letter-spacing: 5px;
 }
 
-#left_bt{
-	margin-left: 50px;
+.border-bt:hover {
+    border-color: rgba(255, 255, 255, 0.5);
+    color: rgba(255, 255, 255, 0.6);
+    box-shadow: 0 0 3px rgba(255, 255, 255, 365);
 }
-#right_bt{
-	margin-right: 50px;
+
+#center_bt {
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    text-decoration: none;
 }
+
+#left_bt {
+    margin-left: 50px;
+}
+
+#right_bt {
+    margin-right: 50px;
+}
+
+
 /***********************************************************************/
+
 
 /******************************过渡动画*********************************/
-.ChangeBG{
-	position: fixed;
-	width: 100%;
-	height: 0%;
-	background-color: #ededed;
-	background-image: url(../Picture/LoadPic.jpg);
-	background-repeat: no-repeat;
-	background-position: center;
-	background-size: auto 640px;
-	z-index: 3;
-}
-.ChangeBG.bottom{
-	bottom: 0;
-}
-.ChangeBG.top{
-	top: 0;
+
+.ChangeBG {
+    position: fixed;
+    width: 100%;
+    height: 0%;
+    background-color: #ededed;
+    background-image: url(../Picture/LoadPic.jpg);
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: auto 640px;
+    z-index: 3;
 }
 
+.ChangeBG.bottom {
+    bottom: 0;
+}
+
+.ChangeBG.top {
+    top: 0;
+}
+
+
 /***********************************************************************/
+
 
 /********************************anime**********************************/
-#anime-BG{
-	background-image: url('../Picture/anime/ice.jpg');
-	background-position: center 0;
+
+#anime-BG {
+    background-image: url('../Picture/anime/ice.jpg');
+    background-position: center 0;
 }
 
-#animeToresume-bt{
-	position: absolute;
-	top: 60%;
-	left: 50%;
-	transform: translate(-50%,10%);
-	font-weight: normal;
-	font-size: 25px;
+#animeToresume-bt {
+    position: absolute;
+    top: 60%;
+    left: 50%;
+    transform: translate(-50%, 10%);
+    font-weight: normal;
+    font-size: 25px;
 }
+
+
 /***********************************************************************/
 
+
 /****************************resume*************************************/
-#resume-BG{
-	background-image: url('../Picture/resume/resume1.jpg');
-	background-position: center 0;
+
+#resume-BG {
+    background-image: url('../Picture/resume/resume1.jpg');
+    background-position: center 0;
 }
-#resumeTohome-bt{
-	position: absolute;
-	top: 50%;
-	left: 50%;
-	transform: translate(-50%,-50%);
+
+#resumeTohome-bt {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
 }
+
 
 /*****************************右侧导航栏*************************************/
-.sideBar{
-	position: fixed;
-	right: -150px;
-	top: 40%;
-	height: 250px;
-	width: 150px;
-	transform: translate(0,-50%);
-}
-#arror{
-	position: absolute;
-	width: 25px;
-	height: 80px;
-	top: 40%;
-	margin-left: -25px;
-	border-top-left-radius: 10px;
-	border-bottom-left-radius: 10px;
-	transform: translate(0,-50%);
-	background-color: rgba(0,0,0,0.8);
-	border-width: 2px 0 2px 2px;
-	border-style: solid;
-	border-color: #FFFFFFC8;
-}
-.acenter{
-	position: absolute;
-	font-size: 35px;
-	font-weight: bolder;
-	top: 50%;
-	left: 50%;
-	color: #D8D8D8FF;
-	transform: translate(-50%,-50%);
-}
-#content{
-	position: absolute;
-	width: 150px;
-	height: 100%;
-	left: 0px;
-	border-width: 2px 0 2px 2px;
-	border-style: solid;
-	border-color: #FFFFFFC8;
-	background-color: rgba(0,0,0,0.8);
-}
-.indexBt{
-	margin: 5px 0 5px 0;
-	height: 40px;
-	width: 100%;
-	line-height: 40px;
-	text-align: center;
-	cursor: pointer;
-	color: #8C8C8CFF;
-	font-size: 20px;
-	font-weight: bolder;
-	letter-spacing: 3px;
-}
-.indexBt:hover{
-/*	background-color: #aaa;*/
-	font-size: 25px;
-	color: #FFFFFFFF;
-	/*text-shadow:0 0 35px #FBF303;*/
+
+.sideBar {
+    position: fixed;
+    right: -150px;
+    top: 40%;
+    height: 250px;
+    width: 150px;
+    transform: translate(0, -50%);
 }
 
+#arror {
+    position: absolute;
+    width: 25px;
+    height: 80px;
+    top: 40%;
+    margin-left: -25px;
+    border-top-left-radius: 10px;
+    border-bottom-left-radius: 10px;
+    transform: translate(0, -50%);
+    background-color: rgba(0, 0, 0, 0.8);
+    border-width: 2px 0 2px 2px;
+    border-style: solid;
+    border-color: #FFFFFFC8;
+}
+
+.acenter {
+    position: absolute;
+    font-size: 35px;
+    font-weight: bolder;
+    top: 50%;
+    left: 50%;
+    color: #D8D8D8FF;
+    transform: translate(-50%, -50%);
+}
+
+#content {
+    position: absolute;
+    width: 150px;
+    height: 100%;
+    left: 0px;
+    border-width: 2px 0 2px 2px;
+    border-style: solid;
+    border-color: #FFFFFFC8;
+    background-color: rgba(0, 0, 0, 0.8);
+}
+
+.indexBt {
+    margin: 5px 0 5px 0;
+    height: 40px;
+    width: 100%;
+    line-height: 40px;
+    text-align: center;
+    cursor: pointer;
+    color: #8C8C8CFF;
+    font-size: 20px;
+    font-weight: bolder;
+    letter-spacing: 3px;
+    user-select: none;
+}
+
+.indexBt:hover {
+    /*	background-color: #aaa;*/
+    font-size: 25px;
+    color: #FFFFFFFF;
+    /*text-shadow:0 0 35px #FBF303;*/
+}
+
+
 /****************************左侧工具栏***************************************/
+
+
 /*.leftBar{
 	position: fixed;
 }*/
-.musicBar{
-	position: fixed;
-	left: -100px;
-	top: 80%;
-	z-index: 2;	
+
+.musicBar {
+    position: fixed;
+    left: -100px;
+    bottom: 220px;
+    z-index: 2;
 }
-.musicPic{
-	position: absolute;
-	width: 100px;
-	height: 100px;
-	background-image: url('');
+
+.musicPic {
+    position: absolute;
+    width: 100px;
+    height: 100px;
+    background-image: url('');
 }
-#musicBarcontent{
-	width: 100px;
-	height: 100px;
-	position: absolute;
-	background-color: #FFFFFFFF;
+
+#musicBarcontent {
+    width: 100px;
+    height: 100px;
+    position: absolute;
+    background-color: #FFFFFFFF;
 }
-#musicBarlabel{
-	position: absolute;
-	left: 100px;
-	width: 20px;
-	height: 96px;
-	background-color: #191919C8;
-	border-top-right-radius: 10px;
-	border-bottom-right-radius: 10px;
-	border-width: 2px 2px 2px 0;
-	border-color: #CCCCCCE6;
-	border-style: solid;
+
+#musicBarlabel {
+    position: absolute;
+    left: 100px;
+    width: 20px;
+    height: 96px;
+    background-color: #191919C8;
+    border-top-right-radius: 10px;
+    border-bottom-right-radius: 10px;
+    border-width: 2px 2px 2px 0;
+    border-color: #CCCCCCE6;
+    border-style: solid;
 }
-.center{
-	position: absolute;
-	top: 50%;
-	left: 50%;
-	transform: translate(-50%,-50%);
+
+.center {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
 }
-#musicCenter{
-	font-size: 15px;
-	color: #E8E8E8FF;
-	transform: translate(-50%,-50%);
+
+#musicCenter {
+    font-size: 15px;
+    color: #E8E8E8FF;
+    transform: translate(-50%, -50%);
 }
-.musicBtBG{
-	border-radius:50%;
-	background-color:#000;
-	opacity: 0.5;
-	cursor: pointer;
+
+.musicBtBG {
+    border-radius: 50%;
+    background-color: #000;
+    opacity: 0.5;
+    cursor: pointer;
 }
-.musicBtBG:hover{
-	opacity: 0.8;
+
+.musicBtBG:hover {
+    opacity: 0.8;
 }
-#lastMusic{
-	position: absolute;
-	top: 5px;
-	left: 5px;
-	width: 20px;
-	height: 20px;
+
+.musiclyrBtBG {
+    border-radius: 10%;
+    background-color: #000;
+    opacity: 0.5;
+    cursor: pointer;
 }
-#nextMusic{
-	position: absolute;
-	top: 5px;
-	right: 5px;
-	width: 20px;
-	height: 20px;
+
+.musiclyrBtBG:hover {
+    opacity: 0.8;
 }
-#controlMusic{
-	position: absolute;
-	top: 2px;
-	right: 37px;
-	width: 26px;
-	height: 26px;
+
+#lastMusic {
+    position: absolute;
+    top: 5px;
+    left: 5px;
+    width: 20px;
+    height: 20px;
 }
-#musicControl{
-	top: 52%;
-	color:#fff;
-	font-size: 14px;
+
+#nextMusic {
+    position: absolute;
+    top: 5px;
+    right: 5px;
+    width: 20px;
+    height: 20px;
+}
+
+#controlMusic {
+    position: absolute;
+    top: 2px;
+    right: 37px;
+    width: 26px;
+    height: 26px;
+}
+
+#musicControl {
+    top: 52%;
+    color: #fff;
+    font-size: 14px;
+}
+
+.lyr {
+    font-size: 16px;
+    color: rgb(214, 214, 214);
+    user-select: none;
+}
+
+
+/*****************************歌词区域**************************************/
+
+.musicLyric {
+    position: fixed;
+    left: 5px;
+    bottom: 65px;
+    width: 350px;
+    height: 50px;
+    z-index: 2;
+    border-radius: 5px;
+    background-color: rgba(121, 121, 121, 0.6);
+    visibility: hidden;
+    transition: all 0.8s;
+    opacity: 0;
+    visibility: visible;
+}
+
+.musicLyric.show {
+    opacity: 1;
 }
