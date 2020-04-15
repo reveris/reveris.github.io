@@ -8,8 +8,8 @@ var isOrder = false;
 
 function MusicInit() {
     GetPlaylist();
-    songNum = Math.floor(Math.random() * songIDlist.length);
-    GetMusic();
+    // songNum = Math.floor(Math.random() * songIDlist.length);
+    // GetMusic();
     $('audio').attr('autoplay', 'autoplay');
 }
 
@@ -83,7 +83,8 @@ function GetPlaylist() {
         Method: 'Get',
         success: function(response) {
             songIDlist = response.playlist.trackIds;
-            // GetMusic();
+            GetNum('down');
+            GetMusic();
         }
     });
 }
