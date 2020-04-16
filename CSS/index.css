@@ -413,3 +413,20 @@ body {
 .musicLyric.show {
     opacity: 1;
 }
+
+.lrcArea {
+    position: absolute;
+    width: 340px;
+    height: 40px;
+    top: 5px;
+    left: 5px;
+    visibility: visible;
+    text-align: center;
+}
+
+.lyricFont {
+    font-size: 15px;
+    width: 100%;
+    color: lightblue;
+    overflow: hidden;
+}
