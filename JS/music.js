@@ -122,39 +122,41 @@ function GetMusic() {
     //     }
     // });
     $('audio').attr('src', 'http://music.163.com/song/media/outer/url?id=' + songIDlist[songNum].id);
+    //$('audio').attr('src', 'https://api.imjad.cn/cloudmusic/?type=song&br=128000&id=' + songIDlist[songNum].id);
     audio.oncanplay = function() {
         $('.musicBtBG').css('visibility', 'visible');
         play();
     };
-    GetLyric();
+    //GetLyric();
 }
 
-audio.ontimeupdate = function(e) {
-    if (tLyric == null) {
-        if (this.currentTime >= Lyric[lrcNum][0]) {
-            $('#LyricTxt').html(Lyric[lrcNum][1]);
-            lrcNum += 1;
-        }
-    } else {
-        if (this.currentTime >= Lyric[lrcNum][0]) {
-            $('#tLyricTxt1').html(Lyric[lrcNum][1]);
-            lrcNum += 1;
-        }
-        if (this.currentTime >= tLyric[tlrcNum][0]) {
-            $('#tLyricTxt2').html(tLyric[tlrcNum][1]);
-            tlrcNum += 1;
-        }
-    }
-    // if (this.currentTime >= Lyric[lrcNum][0]) {
-    //     if (tLyric == null) {
-    //         $('#LyricTxt').html(Lyric[lrcNum][1]);
-    //         lrcNum += 1;
-    //     } else {
-    //         $('#tLyricTxt1').html(Lyric[lrcNum][1]);
-    //         $('#tLyricTxt2').html(tLyric[lrcNum][1]);
-    //     }
-    // }
-}
+// 歌词源存在问题
+// audio.ontimeupdate = function(e) {
+//     if (tLyric == null) {
+//         if (this.currentTime >= Lyric[lrcNum][0]) {
+//             $('#LyricTxt').html(Lyric[lrcNum][1]);
+//             lrcNum += 1;
+//         }
+//     } else {
+//         if (this.currentTime >= Lyric[lrcNum][0]) {
+//             $('#tLyricTxt1').html(Lyric[lrcNum][1]);
+//             lrcNum += 1;
+//         }
+//         if (this.currentTime >= tLyric[tlrcNum][0]) {
+//             $('#tLyricTxt2').html(tLyric[tlrcNum][1]);
+//             tlrcNum += 1;
+//         }
+//     }
+// if (this.currentTime >= Lyric[lrcNum][0]) {
+//     if (tLyric == null) {
+//         $('#LyricTxt').html(Lyric[lrcNum][1]);
+//         lrcNum += 1;
+//     } else {
+//         $('#tLyricTxt1').html(Lyric[lrcNum][1]);
+//         $('#tLyricTxt2').html(tLyric[lrcNum][1]);
+//     }
+// }
+
 
 function lycmode() {
     if (lycMode) {
@@ -168,26 +170,12 @@ function lycmode() {
 }
 
 function GetLyric() {
-    // $.ajax({
-    //     //url: 'http://v1.hitokoto.cn/nm/lyric/' + songIDlist[songNum].id,
-    //     url: 'http://music.163.com/api/song/lyric?os=pc&lv=-1&tv=-1&id=' + songIDlist[songNum].id,
-    //     dataType: 'json',
-    //     Method: 'Get',
-    //     success: function(response) {
-    //         console.log(response);
-    //         Lyric = parseLyric(response.lrc.lyric);
-    //         if (response.tlyric.lyric != null) {
-    //             tLyric = parseLyric(response.tlyric.lyric);
-    //         } else {
-    //             tLyric = null;
-    //         };
-    //         //Lyric = response;
-    //     }
-    // });
-    $.getJSON(
-        'http://v1.hitokoto.cn/nm/lyric/' + songIDlist[songNum].id,
-        //'http://music.163.com/api/song/lyric?os=pc&lv=-1&tv=-1&id=' + songIDlist[songNum].id,
-        function(response) {
+    $.ajax({
+        url: 'http://v1.hitokoto.cn/nm/lyric/' + songIDlist[songNum].id,
+        //url: 'http://music.163.com/api/song/lyric?os=pc&lv=-1&tv=-1&id=' + songIDlist[songNum].id,
+        dataType: 'json',
+        Method: 'Get',
+        success: function(response) {
             console.log(response);
             Lyric = parseLyric(response.lrc.lyric);
             if (response.tlyric.lyric != null) {
@@ -195,8 +183,22 @@ function GetLyric() {
             } else {
                 tLyric = null;
             };
+            //Lyric = response;
         }
-    );
+    });
+    // $.getJSON(
+    //     'http://v1.hitokoto.cn/nm/lyric/' + songIDlist[songNum].id,
+    //     //'http://music.163.com/api/song/lyric?os=pc&lv=-1&tv=-1&id=' + songIDlist[songNum].id,
+    //     function(response) {
+    //         console.log(response);
+    //         Lyric = parseLyric(response.lrc.lyric);
+    //         if (response.tlyric.lyric != null) {
+    //             tLyric = parseLyric(response.tlyric.lyric);
+    //         } else {
+    //             tLyric = null;
+    //         };
+    //     }
+    // );
     lrcNum = 0;
     tlrcNum = 0;
     // if (tLyric != null) {
@@ -238,11 +240,11 @@ function parseLyric(text) {
     result.sort(function(a, b) {
         return a[0] - b[0];
     });
-    var finalresult = [];
-    for (let index = 0; index < result.length; index++) {
-        if (result[index][1] != '') {
-            finalresult.push(result[index]);
-        }
-    }
-    return finalresult;
+    // var finalresult = [];
+    // for (let index = 0; index < result.length; index++) {
+    //     if (result[index][1] != '') {
+    //         finalresult.push(result[index]);
+    //     }
+    // }
+    return result;
 }
