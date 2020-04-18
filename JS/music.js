@@ -168,12 +168,26 @@ function lycmode() {
 }
 
 function GetLyric() {
-    $.ajax({
-        url: 'http://v1.hitokoto.cn/nm/lyric/' + songIDlist[songNum].id,
-        //url: 'http://music.163.com/api/song/lyric?os=pc&lv=-1&tv=-1&id=' + songIDlist[songNum].id,
-        dataType: 'json',
-        Method: 'Get',
-        success: function(response) {
+    // $.ajax({
+    //     //url: 'http://v1.hitokoto.cn/nm/lyric/' + songIDlist[songNum].id,
+    //     url: 'http://music.163.com/api/song/lyric?os=pc&lv=-1&tv=-1&id=' + songIDlist[songNum].id,
+    //     dataType: 'json',
+    //     Method: 'Get',
+    //     success: function(response) {
+    //         console.log(response);
+    //         Lyric = parseLyric(response.lrc.lyric);
+    //         if (response.tlyric.lyric != null) {
+    //             tLyric = parseLyric(response.tlyric.lyric);
+    //         } else {
+    //             tLyric = null;
+    //         };
+    //         //Lyric = response;
+    //     }
+    // });
+    $.getJSON(
+        'http://v1.hitokoto.cn/nm/lyric/' + songIDlist[songNum].id,
+        //'http://music.163.com/api/song/lyric?os=pc&lv=-1&tv=-1&id=' + songIDlist[songNum].id,
+        function(response) {
             console.log(response);
             Lyric = parseLyric(response.lrc.lyric);
             if (response.tlyric.lyric != null) {
@@ -181,19 +195,10 @@ function GetLyric() {
             } else {
                 tLyric = null;
             };
-            //Lyric = response;
         }
-    });
+    );
     lrcNum = 0;
     tlrcNum = 0;
-    // $.getJSON(
-    //     'http://v1.hitokoto.cn/nm/lyric/' + songIDlist[songNum].id,
-    //     //'http://music.163.com/api/song/lyric?os=pc&lv=-1&tv=-1&id=' + songIDlist[songNum].id,
-    //     function(data) {
-    //         Lyric = data;
-    //         console.log(data);
-    //     }
-    // );
     // if (tLyric != null) {
     //     $('#tLyricTxt').css('visibility', 'hidden');
     //     $('#LyricTxt').css('visibility', 'visible');
