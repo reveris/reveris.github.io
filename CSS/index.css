@@ -44,7 +44,7 @@ body {
 }
 
 #index-BG {
-    background-image: url("../Picture/mainBG.jpg");
+    background-image: url("https://cdn.jsdelivr.net/gh/reveris/reveris.github.io@1.0/Picture/mainBG.jpg");
 }
 
 .headPic {
@@ -64,7 +64,7 @@ body {
     width: 150px;
     height: 150px;
     border-radius: 30px;
-    background-image: url("../Picture/mainPic.png");
+    background-image: url("https://cdn.jsdelivr.net/gh/reveris/reveris.github.io@1.0/Picture/mainPic.png");
     background-repeat: no-repeat;
     background-size: contain;
 }
@@ -200,7 +200,7 @@ body {
 /****************************resume*************************************/
 
 #resume-BG {
-    background-image: url('../Picture/resume/resume1.jpg');
+    background-image: url('https://cdn.jsdelivr.net/gh/reveris/reveris.github.io@1.0/Picture/resume/resume1.jpg');
     background-position: center 0;
 }
 
